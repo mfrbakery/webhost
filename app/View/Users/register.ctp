@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
+		echo $this->Form->hidden('group_id', array('default' => 4))
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

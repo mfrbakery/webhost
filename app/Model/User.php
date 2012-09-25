@@ -68,6 +68,14 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'unique' => array(
+						'rule' => array('isUnique'),
+						'message' => 'An account with this username already exists.'
+			),
+			'alphaNumeric' => array(
+					'rule' => array('alphaNumeric'),
+					'message' => 'Username can only contain letters and numbers.'
+			)
 		),
 		'password' => array(
 			'notempty' => array(
