@@ -12,8 +12,11 @@ class User extends AppModel {
 	 * @see Model::beforeSave()
 	 */
 	public function beforeSave($options = array()) {
-		$this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
-		return true;
+			if (isset($this->data[$this->alias]['password'])) {
+				$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password'], 'sha512', true);
+			}
+			
+			return true;
 	}
 	
 	public $name = 'User';
