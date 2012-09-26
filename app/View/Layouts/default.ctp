@@ -51,6 +51,6 @@ $cakeDescription = __d('cake_dev', 'Web Hosting services and Web Development ser
 		
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); ?>
 </body>
 </html>

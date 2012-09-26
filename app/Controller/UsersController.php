@@ -8,7 +8,9 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	
+	public $view   = 'Theme';
 	
+	public $theme = 'Default';
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
