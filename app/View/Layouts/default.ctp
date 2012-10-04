@@ -29,7 +29,7 @@ $cakeDescription = __d('cake_dev', 'Web Hosting services and Web Development ser
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

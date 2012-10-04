@@ -1,10 +1,16 @@
 <div class="users form">
-
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 <?php
 echo $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User', array('action' => 'login'));?>
+<fieldset>
+	<legend><?php echo __('Please enter your username and password'); ?></legend>
     <fieldset>
-        <legend><?php echo __('Please enter your username and password'); ?></legend>
+        
        
     <?php
        echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'login')));
@@ -14,6 +20,7 @@ echo $this->Session->flash('auth'); ?>
        
     ?>
    
+    </fieldset>
     </fieldset>
 
 </div>
