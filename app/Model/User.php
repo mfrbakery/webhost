@@ -136,5 +136,9 @@ class User extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	public function validatePassword($data){
+		if($this->data['User']['password'] !== $this->data['User']['confirmpassword'])
+	}
 
 }

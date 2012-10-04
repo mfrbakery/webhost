@@ -7,6 +7,7 @@
        echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'login')));
 		echo $this->Form->input('User.username');
 		echo $this->Form->input('User.password');
+		echo $this->Form->input('User.confirmpassword');
 		echo $this->Form->end('Login');
        
     ?>
