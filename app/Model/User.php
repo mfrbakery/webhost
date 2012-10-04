@@ -138,7 +138,9 @@ class User extends AppModel {
 	);
 	
 	public function validatePassword($data){
-		if($this->data['User']['password'] !== $this->data['User']['confirmpassword'])
+		if($this->data['User']['password'] !== $this->data['User']['confirmpassword']){
+			
+		}
 	}
 
 }
