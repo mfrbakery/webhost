@@ -86,6 +86,11 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'passwordRule-2' => array(
+				'rule' => array('validatePassword','password'),
+				'message' => 'Passwords do not match.'
+				
+			)
 		),
 		'group_id' => array(
 			'numeric' => array(
@@ -139,7 +144,10 @@ class User extends AppModel {
 	
 	public function validatePassword($data){
 		if($this->data['User']['password'] !== $this->data['User']['confirmpassword']){
-			
+			return false;
+		}
+		else{
+			return true;
 		}
 	}
 
