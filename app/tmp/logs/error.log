@@ -1,0 +1,14 @@
+2012-10-04 14:00:16 Error: Fatal Error (4): syntax error, unexpected ')' in [/var/www/webhost/app/Model/User.php, line 141]
+2012-10-04 14:00:16 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /var/www/webhost/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/webhos...', 141)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/webhos...', 141, Array)
+#2 /var/www/webhost/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/webhos...', 141, Array)
+#3 /var/www/webhost/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 14:00:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-07 03:45:11 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
