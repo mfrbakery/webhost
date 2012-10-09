@@ -1,4 +1,9 @@
 <div class="users view">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 <h2><?php  echo __('User'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>

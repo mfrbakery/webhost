@@ -1,10 +1,16 @@
 <div class="users form">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 <?php echo $this->Form->create('User'); ?>
 	<fieldset>
 		<legend><?php echo __('Register'); ?></legend>
 	<?php
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
+		echo $this->Form->input('User.confirmpassword', array('label' => 'Confirm Password', 'type'=>'password'));
 		echo $this->Form->hidden('group_id', array('default' => 4))
 	?>
 	</fieldset>

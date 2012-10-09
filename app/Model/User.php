@@ -62,11 +62,11 @@ class User extends AppModel {
 		'username' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
+				'message' => 'Your custom message here',
+				'allowEmpty' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'unique' => array(
 						'rule' => array('isUnique'),
@@ -79,14 +79,29 @@ class User extends AppModel {
 		),
 		'password' => array(
 			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
+				'rule' => array('validatePassword'),
+				'message' => 'Password is required.',
+				'allowEmpty' => false,
+				'required' => true,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'passwordRule-2' => array(
+					'rule' => array('validatePassword'),
+					'message' => 'Passwords do not match.'
+			
+			)
+			
 		),
+		'confirmpassword' => array(
+			'passwordRule-2' => array(
+				'rule' => array('validatePassword'),
+				'message' => 'Passwords do not match.'
+					
+			),
+		
+		),
+		
 		'group_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -136,5 +151,14 @@ class User extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	
+	public function validatePassword($data){
+		if($this->data['User']['password'] !== $this->data['User']['confirmpassword']){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
 
 }

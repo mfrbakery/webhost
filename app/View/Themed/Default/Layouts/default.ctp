@@ -1,4 +1,5 @@
 <?php
+App::uses('AppController', 'Controller', 'AuthHelper');
 /**
  *
  * PHP 5
@@ -15,8 +16,16 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
+if($this->Session->read('Auth.User.id')!=null){
+	$name = 'Sign out';
+	$navLinks[] = array('name' => $name, 'controller' => 'users', 'action' => 'logout');
+}else{
+	$name = 'Sign in';
+	$navLinks[] = array('name' => $name, 'controller' => 'users', 'action' => 'login');
+}
 $cakeDescription = __d('cake_dev', 'Web Hosting services and Web Development services');
+
+$navLinks[] = array('name' => 'Register', 'controller' => 'users', 'action' => 'register');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,11 +48,14 @@ $cakeDescription = __d('cake_dev', 'Web Hosting services and Web Development ser
 <body>
 	<div id="container">
 		<div id="header">
-		
-			<h1><?php echo $this->Html->link($cakeDescription, ''); ?>
+		<h1><?php foreach($navLinks as $nav) {
+				echo $this->Html->link(__(ucwords(strtolower($nav['name']))).' ', "/{$nav['controller']}/{$nav['action']}");
+				}
+			?></h1>
+			<h2><?php echo $this->Html->link($cakeDescription, ''); ?>
 				
 			
-			</h1>
+			</h2>
 		</div>
 		<div id="content">
 

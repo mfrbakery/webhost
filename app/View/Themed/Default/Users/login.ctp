@@ -13,10 +13,11 @@ echo $this->Session->flash('auth'); ?>
         
        
     <?php
+    /*
        echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'login')));
 		echo $this->Form->input('User.username');
 		echo $this->Form->input('User.password');
-		echo $this->Form->end('Login');
+		echo $this->Form->end('Login');*/
        
     ?>
    
@@ -26,9 +27,19 @@ echo $this->Session->flash('auth'); ?>
 </div>
 
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('Register'), array('action' => 'register'));?></li>
-	</ul>
+	<h3><?php echo __('Login'); ?></h3>
+	
+	<div class="formactions">
+	 <?php
+       echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'login')));
+		echo $this->Form->input('User.username');
+		echo $this->Form->input('User.password');
+		echo $this->Form->end('Login');
+		?>
+		<?php 
+		 ?>
+       
+   
+    </div>
+    
 </div>

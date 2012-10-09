@@ -1,31 +1,26 @@
-<!--Navigation Background Part Starts -->
-
-<div id="navigation-bg">
-
-    <!--Navigation Part Starts -->
-
-    <div id="navigation">
-
-        <ul class="mainMenu">
+<div class="users form">
 <?php
 // in your view file
-$this->Html->script('webhost', array('inline' => false));
-$this->Html->css('webhost', null, array('inline' => false));
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
 ?>
-            <li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
-
-           <li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
-
-            <li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
-
-        </ul>
-
-        <a href="#" class="signup" title="signup now"></a>
-
-    </div>
-
-    <!--Navigation Part Ends -->
+<?php
+echo $this->Session->flash('auth'); ?>
+<?php echo $this->Form->create('User', array('action' => 'login'));?>
+<fieldset>
+	<legend><?php echo __('Please enter your username and password'); ?></legend>
+    <fieldset>
+        
+       
+    <?php
+    
+      
+		echo $this->Form->input('User.whois');
+		
+       
+    ?>
+   
+    </fieldset>
+    </fieldset>
 
 </div>
-
-<!--Navigation Background Part Ends -->
