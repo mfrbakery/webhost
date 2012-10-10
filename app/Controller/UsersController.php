@@ -14,7 +14,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login','home', 'register');
+		$this->Auth->allow('login','home', 'register', 'about','contact');
 		$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 /**
@@ -116,6 +116,10 @@ class UsersController extends AppController {
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
 	}
+	
+	public function about(){
+		
+	}
 
 /**
  * edit method
@@ -170,7 +174,7 @@ class UsersController extends AppController {
 	/**
 	 * 
 	 */
-public function login() {
+	public function login() {
 		if ($this->Session->read('Auth.User')) {
 			$this->Session->setFlash('You are logged in!', 'success');
 			$this->redirect(array('action' => 'view'));
@@ -196,6 +200,10 @@ public function login() {
 	}
 	
 	public function home(){
+		
+	}
+	
+	public function contact(){
 		
 	}
 	

@@ -10,22 +10,10 @@ $this->Html->css('home', null, array('inline' => false));
         <td><div class="navigation"><a href="#" class="main_link">Gallery</a></div></td>
         <td><div class="navigation"><?php echo $this->Html->link(__('About'), array('action' => 'about'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><a href="#" class="main_link">Help</a></div></td>
-        <td><div class="navigation"><?php echo $this->Html->link(__('Contact Us'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><a href="#" class="main_link">Partner</a></div></td>
       </tr>
     </table></td>
-    <fieldset>
-        
-       
-    <?php
-    
-      
-		echo $this->Form->input('User.whois');
-		
-       
-    ?>
-   
-    </fieldset>
-    <?php echo $this->Html->link(__('Login'), array('action' => 'login'));?>
+
  
 
 </div>
