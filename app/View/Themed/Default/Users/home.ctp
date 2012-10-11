@@ -18,14 +18,14 @@ $this->Html->css('home', null, array('inline' => false));
        
     <?php
     
-      
-		echo $this->Form->input('User.whois');
+    
+		//this can  be shown later
+		//echo $this->Form->input('User.whois');
 		
        
     ?>
    
     </fieldset>
-    <?php echo $this->Html->link(__('Login'), array('action' => 'login'));?>
  
 
 </div>

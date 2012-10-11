@@ -14,7 +14,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login','home', 'register', 'about','contact');
+		$this->Auth->allow('login', 'register', 'about','contact');
 		$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 /**
@@ -102,7 +102,7 @@ class UsersController extends AppController {
 	 * front-end registering of users
 	 */
 	public function register() {
-		
+		debug($this->GetServices());
 		if ($this->request->is('post')) {
 			
 			$this->User->create();
@@ -215,6 +215,12 @@ class UsersController extends AppController {
 		//Leave empty for now.
 		$this->Session->setFlash('You have successfully signed out!', 'success');
 		$this->redirect($this->Auth->logout());
+	}
+	
+	private function GetServices() {
+		$this->loadModel('Service');
+		$services = $this->Service->find('all');
+		return $services;
 	}
 	
 }

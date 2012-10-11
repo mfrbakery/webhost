@@ -149,6 +149,10 @@ class User extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'RequestRecord' => array(
+			'className' => 'RequestRecord',
+			'foreignKey' => 'user_id'
 		)
 	);
 	

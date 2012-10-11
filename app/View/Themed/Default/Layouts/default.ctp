@@ -17,10 +17,10 @@ App::uses('AppController', 'Controller', 'AuthHelper');
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 if($this->Session->read('Auth.User.id')!=null){
-	$name = 'Sign out';
+	$name = 'Logout';
 	$navLinks[] = array('name' => $name, 'controller' => 'users', 'action' => 'logout');
 }else{
-	$name = 'Sign in';
+	$name = 'Login';
 	$navLinks[] = array('name' => $name, 'controller' => 'users', 'action' => 'login');
 }
 $cakeDescription = __d('cake_dev', 'Web Hosting services and Web Development services');
@@ -49,7 +49,7 @@ $navLinks[] = array('name' => 'Register', 'controller' => 'users', 'action' => '
 	<div id="container">
 		<div id="header">
 		<h1><?php foreach($navLinks as $nav) {
-				echo $this->Html->link(__(ucwords(strtolower($nav['name']))).' ', "/{$nav['controller']}/{$nav['action']}");
+				echo $this->Html->link(__(ucwords(strtolower($nav['name']))), "/{$nav['controller']}/{$nav['action']}").' ';
 				}
 			?></h1>
 			<h2><?php echo $this->Html->link($cakeDescription, ''); ?>
