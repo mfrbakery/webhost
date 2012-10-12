@@ -102,19 +102,44 @@ class UsersController extends AppController {
 	 * front-end registering of users
 	 */
 	public function register() {
-		debug($this->GetServices());
+	 	$allservices = $this->GetServices();
+	 	//debug($allservices);
 		if ($this->request->is('post')) {
+			// Get the user id
+			
+			// Get the serviceid
 			
 			$this->User->create();
-		
+			//$requestrecord = $this->RequestRecord->User->set(array('user_id' => $userid, 'service_id' => $id));
+			//debug($requestrecord);
+			
 			if ($this->User->save($this->request->data)) {
+				
+				
+				//debug($lastuser);
 				$this->Session->setFlash(__('The user has been saved', 'success'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
+		//$this->loadModel('Service');
+		//$userid = $this->User->id;
+		
+		//$serviceid = $this->request->data['RequestRecord']['service_id'];
+		//debug($serviceid);
+		//debug($userid);
+		
+		//debug($serviceid[0]['Service']['id']);
+		
+		//$this->loadModel('RequestRecord');
+		//$data = $this->RequestRecord->set(array('user_id' => $userid, 'service_id' => $serviceid));
+		//$this->RequestRecord->save($data);
+		
+		
+		
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
+		$this->set('allservices', $allservices);
 	}
 	
 	public function about(){
@@ -218,9 +243,19 @@ class UsersController extends AppController {
 	}
 	
 	private function GetServices() {
+		// Load the Service model	
 		$this->loadModel('Service');
+		
+		
 		$services = $this->Service->find('all');
-		return $services;
+		$myServicesArr = array();
+		
+		foreach($services as $service) {
+			$myServicesArr[$service['Service']['id']] = $service['Service']['servicename'];
+		}
+		
+		
+		return $myServicesArr;
 	}
 	
 }
