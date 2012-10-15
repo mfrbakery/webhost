@@ -439,12 +439,12 @@ form .error-message {
 .message {
 	clear: both;
 	color: #fff;
-	font-size: 140%;
+	font-size: 190%;
 	font-weight: bold;
 	margin: 0 0 1em 0;
 	padding: 5px;
 }
-
+.information,
 .success,
 .message,
 .cake-error,
@@ -473,6 +473,7 @@ p.error,
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
+.information,
 .success,
 .message,
 .cake-error,
@@ -503,6 +504,20 @@ p.error,
 	background-image: -ms-linear-gradient(top, #76BF6B, #3B8230);
 	background-image: -o-linear-gradient(top, #76BF6B, #3B8230);
 	background-image: linear-gradient(top, #76BF6B, #3B8230);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+.information {
+	clear: both;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	background: #3B8230;
+	background-repeat: repeat-x;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#006F6B), to(#000230));
+	background-image: -webkit-linear-gradient(top, #006F6B, #000230);
+	background-image: -moz-linear-gradient(top, #006F6B, #000230);
+	background-image: -ms-linear-gradient(top, #006F6B, #000230);
+	background-image: -o-linear-gradient(top, #006F6B, #000230);
+	background-image: linear-gradient(top, #006F6B, #000230);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 p.error {

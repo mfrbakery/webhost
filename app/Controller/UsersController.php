@@ -102,39 +102,46 @@ class UsersController extends AppController {
 	 * front-end registering of users
 	 */
 	public function register() {
+		
+		
+		
 	 	$allservices = $this->GetServices();
-	 	//debug($allservices);
-		if ($this->request->is('post')) {
+	 	$this->loadModel('RequestRecord');
+	
+		if ($this->request->is('post') && !empty($this->request->data['RequestRecord']['service_id'])) {
 			// Get the user id
 			
 			// Get the serviceid
 			
 			$this->User->create();
-			//$requestrecord = $this->RequestRecord->User->set(array('user_id' => $userid, 'service_id' => $id));
-			//debug($requestrecord);
 			
-			if ($this->User->save($this->request->data)) {
-				
-				
-				//debug($lastuser);
-				$this->Session->setFlash(__('The user has been saved', 'success'));
+			if ($this->User->save($this->request->data) ) {
+
+				$this->Session->setFlash('The user has been saved', 'success');
+				$this->redirect(array('action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
+		} else {
+			$this->Session->setFlash('All fields are required', 'information');
 		}
-		//$this->loadModel('Service');
-		//$userid = $this->User->id;
+
+		$userid = $this->User->id;
+		$username = null;
 		
-		//$serviceid = $this->request->data['RequestRecord']['service_id'];
-		//debug($serviceid);
-		//debug($userid);
+		if(!empty($this->data['User']['username'])){
+			$username = $this->data['User']['username'];
+		}
+		//debug($username);
+		$serviceselection = '';
 		
-		//debug($serviceid[0]['Service']['id']);
+		if(!empty($this->request->data['RequestRecord']['service_id'])){
+			$serviceid = $this->request->data['RequestRecord']['service_id'];
+			$serviceselection = implode(', ', $serviceid);
+		}
 		
-		//$this->loadModel('RequestRecord');
-		//$data = $this->RequestRecord->set(array('user_id' => $userid, 'service_id' => $serviceid));
-		//$this->RequestRecord->save($data);
-		
+		$this->RequestRecord->set(array('user_id' => $userid, 'service_id' => $serviceselection, 'user_username' => $username));
+		$this->RequestRecord->save();
 		
 		
 		$groups = $this->User->Group->find('list');
