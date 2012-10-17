@@ -1,4 +1,5 @@
 <?php  
+App::uses('AppController', 'Controller');
 /** 
  * Whois Component, is Useful to featch Domain's basic Details like Registrar Information,Domain Create Date,Domain Expiry date etc. 
  * 
@@ -7,7 +8,7 @@
  */ 
 class WhoisComponent extends Object 
 { 
-
+	const STATUS_UNAVAILABLE = 0;
 /** 
  * Specify the status 
  * 
@@ -102,9 +103,21 @@ class WhoisComponent extends Object
  * Use to Initialize the basic configuration details of basic Hosting Servers with Registrar and Domain extension.
  * 
  */ 
-    function init(){ 
+    function initialize(){ 
         $this->readconfig(); 
     } 
+    
+    function beforeRedirect(){
+    	
+    }
+    
+    function beforeRender(){
+    	
+    }
+    
+    function shutdown(){
+    	
+    }
          
 
 /** 
@@ -128,7 +141,22 @@ class WhoisComponent extends Object
                 }else{ 
                     return 'Sorry, an error occurred.'; 
                 } 
-            }         
+            } 
+
+  function isdomainavailable($domain, $tld){
+  	
+	  	if( !$this->ValidDomain($domain.'.'.$tld) ){
+	  		return 'Sorry, the domain is not valid or not supported.';
+	  	}
+	  	 
+	  	if( $this->Lookup($domain.'.'.$tld) )
+	  	{
+	  		return true;
+	  	}else{
+	  		return 'Sorry, an error occurred.';
+	  	}
+	  	
+  }
 
 /** 
  * Initialize the configuration  
@@ -205,9 +233,9 @@ class WhoisComponent extends Object
              
             if( $this->splitdomain($this->m_domain, $this->m_sld, $this->m_tld) ){ 
                 $this->m_servers[0] = $this->m_tlds[$this->m_tld]; 
-                $this->m_data[0] = $this->dolookup($this->m_serversettings[$this->m_servers[0]]['extra'].$domain, $this->m_servers[0]); 
+                $this->m_data[0] = $this->dolookup($this->m_serversettings[$this->m_servers[0]]['extra'].$domain, $this->m_servers[0]);
                 if( $this->m_data[0] != '' ){ 
-                    if( $this->m_serversettings[$this->m_servers[0]]['auth'] != '' && $this->m_redirectauth && $this->m_status == STATUS_UNAVAILABLE){ 
+                    if( $this->m_serversettings[$this->m_servers[0]]['auth'] != '' && $this->m_redirectauth && $this->m_status == 0){ 
                         if( preg_match('/'.$this->m_serversettings[$this->m_servers[0]]['auth'].'(.*)/i', $this->m_data[0], $match) ){ 
                             $server = trim($match[1]); 
                             if( $server != '' ){ 

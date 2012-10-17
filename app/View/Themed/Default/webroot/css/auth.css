@@ -511,6 +511,7 @@ p.error,
 	color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.5);
 	background: #3B8230;
+	opacity:0.4;
 	background-repeat: repeat-x;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#006F6B), to(#000230));
 	background-image: -webkit-linear-gradient(top, #006F6B, #000230);
