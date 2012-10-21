@@ -137,12 +137,14 @@ class WhoisComponent extends Object
          
                 if( $this->Lookup($domain.'.'.$tld) ) 
                 { 
-                    return $this->GetData(1); 
+                    return $this->RetData(1); 
                 }else{ 
                     return 'Sorry, an error occurred.'; 
                 } 
             } 
 
+            
+    // @todo delete this it is not in use
   function isdomainavailable($domain, $tld){
   	
 	  	if( !$this->ValidDomain($domain.'.'.$tld) ){
@@ -291,7 +293,7 @@ class WhoisComponent extends Object
  * @param integer 
  * @return data 
  */ 
-
+//@todo delete this it is not in use
     function GetData($i = -1){ 
         if( $i != -1 && isset($this->m_data[$i])){ 
             $dt = htmlspecialchars(trim($this->m_data[$i])); 
@@ -301,7 +303,26 @@ class WhoisComponent extends Object
             return trim(join("\n", $this->m_data)); 
         } 
         return ''; 
-    } 
+    }
+
+    
+    /**
+     * Use to retrive Whois Details.
+     *
+     * @param integer
+     * @return data
+     */
+    
+    function RetData($i = -1){
+    	if( $i != -1 && isset($this->m_data[$i])){
+    		$dt = htmlspecialchars(trim($this->m_data[$i]));
+    		$this->cleandata($this->m_servers[$i], $dt);
+    		return $dt;
+    	}else{
+    		return false;
+    	}
+    	return '';
+    }
 
 /** 
  * Use to split domain.  

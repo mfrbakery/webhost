@@ -162,6 +162,7 @@ class UsersController extends AppController {
  */
 	public function edit($id = null) {
 		$this->User->id = $id;
+		$groupid = $this->Auth->user('group_id');
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
@@ -175,6 +176,7 @@ class UsersController extends AppController {
 		} else {
 			$this->request->data = $this->User->read(null, $id);
 		}
+		$this->set('groupid', $groupid);
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
 	}
@@ -207,9 +209,18 @@ class UsersController extends AppController {
 	 * 
 	 */
 	public function login() {
-		if ($this->Session->read('Auth.User')) {
+		
+		if ($this->Auth->loggedIn()) {
+			$id = $this->Auth->user('id');
 			$this->Session->setFlash('You are logged in!', 'success');
-			$this->redirect(array('action' => 'view'));
+			$groupid = $this->Auth->user('group_id');
+			
+			if($groupid == 1 or $groupid == 2){
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->redirect(array('action' => 'view', $id));
+			}
+			
 		} else {
 	
 			if ($this->request->is('post')) {

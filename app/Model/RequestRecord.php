@@ -3,6 +3,8 @@ App::uses('AppModel', 'Model');
 
 class RequestRecord extends AppModel {
 	
+	
+	public $useTable = 'request_records';
 	/**
 	 * Validation rules
 	 *

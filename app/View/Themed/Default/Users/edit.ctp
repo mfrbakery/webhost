@@ -5,8 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('group_id');
+		echo ($groupid == 1 or $groupid == 2) ?  $this->Form->input('group_id') : '';
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

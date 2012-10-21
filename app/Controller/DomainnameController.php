@@ -29,9 +29,9 @@ class DomainnameController extends AppController {
 			
 			$available = $this->Whois->isdomainavailable($sld, $tld);
 			
-			debug($available);
-			
-			if($available==''){
+			//debug($available);
+			//debug($data);
+			if($data==false){
 				$this->Session->setFlash('That domain is available!', 'success');
 			} else {
 				$this->Session->setFlash('Sorry! That domain name is already taken.');

@@ -84,7 +84,7 @@ class User extends AppModel {
 				'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'passwordRule-2' => array(
 					'rule' => array('validatePassword'),
@@ -94,27 +94,66 @@ class User extends AppModel {
 			
 		),
 		'confirmpassword' => array(
-			'passwordRule-2' => array(
+			
 				'rule' => array('validatePassword'),
-				'message' => 'Passwords do not match.'
+				'message' => 'Passwords do not match.',
+				'on' => 'create',
 					
-			),
+			
 		
 		),
 		
 		'group_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
+				
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'group_id-Rule2' => array(
+				'rule' => array('comparison', '>', 1),
+				'message' => 'You are not authorized to save this user to the developers group.'
+			)
 		),
 	);
 	
 	
+	
+	function validateMaxGrade($data) {
+		$result = false;
+		if (isset($this->data['School']['mingrade']) && isset($this->data['School']['maxgrade'])) {
+			$mingrade = $this->data['School']['mingrade'];
+			$maxgrade = $this->data['School']['maxgrade'];
+		} else {
+			$mingrade = $this->field('mingrade');
+			$maxgrade = $this->field('maxgrade');
+		}
+
+		if($maxgrade < 13){
+				if($mingrade == 'PK' || $mingrade == 'K'){
+					$mingrade = 0;
+				}
+				// Maximum grade has to be greater than the minimum grade
+				if($maxgrade > $mingrade){
+					
+					return true;
+				}
+				// Maximum grade has to be greater than the minimum grade
+				elseif($maxgrade <= $mingrade){
+					return false;
+				}
+				else {
+					return false;
+				}		
+		} else {
+			return false;
+		}
+		
+
+	}
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
