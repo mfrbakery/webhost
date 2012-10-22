@@ -23,14 +23,14 @@ class RequestRecord extends AppModel {
 			),
 			
 			'service_id' => array(
-					'notempty' => array(
+					//'notempty' => array(
 							//'rule' => array('notempty'),
 							//'message' => 'Your custom message here',
 							//'allowEmpty' => false,
 							//'required' => true,
 							//'last' => false, // Stop validation after this rule
-							'on' => 'create', // Limit validation to 'create' or 'update' operations
-					),
+							//'on' => 'create', // Limit validation to 'create' or 'update' operations
+					//),
 			)
 	);
 	

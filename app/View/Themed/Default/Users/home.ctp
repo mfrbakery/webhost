@@ -8,7 +8,7 @@ $this->Html->css('home', null, array('inline' => false));
       <tr>
         <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('action' => 'home'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><a href="#" class="main_link">Gallery</a></div></td>
-        <td><div class="navigation"><?php echo $this->Html->link(__('About'), array('action' => 'about'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><?php echo $this->Html->link(__('About'), array('controller' => 'about', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><a href="#" class="main_link">Help</a></div></td>
         <td><div class="navigation"><?php echo $this->Html->link(__('Contact Us'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
       </tr>

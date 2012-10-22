@@ -118,7 +118,7 @@ class UsersController extends AppController {
 			if ($this->User->save($this->request->data) ) {
 
 				$this->Session->setFlash('The user has been saved', 'success');
-				$this->redirect(array('action' => 'login'));
+				//$this->redirect(array('action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
@@ -141,8 +141,8 @@ class UsersController extends AppController {
 		}
 		
 		$this->RequestRecord->set(array('user_id' => $userid, 'service_id' => $serviceselection, 'user_username' => $username));
-		$this->RequestRecord->save();
-		
+		if($this->RequestRecord->save())
+		$this->redirect(array('action' => 'login'));
 		
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
