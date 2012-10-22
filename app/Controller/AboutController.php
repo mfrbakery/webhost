@@ -49,7 +49,11 @@ class AboutController extends AppController{
 	}
 	
 	public function view($id = null){
-		
+		$this->Note->id = $id;
+		if (!$this->Note->exists()) {
+			throw new NotFoundException(__('Invalid note'));
+		}
+		$this->set('note', $this->Note->read(null, $id));
 	}
 	
 }
