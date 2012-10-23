@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="about form">
 <?php echo $this->Form->create('About'); ?>
 	<fieldset>

@@ -1,4 +1,9 @@
 <div class="notes view">
+<?php
+// in your view file
+$this->Html->script('home', array('inline' => false));
+$this->Html->css('home', null, array('inline' => false));
+?>
 <h2><?php  echo __('Note'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>

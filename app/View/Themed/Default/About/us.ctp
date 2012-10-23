@@ -1,4 +1,4 @@
-<div class="users form">
+<div class="Abouts view">
 <?php
 // in your view file
 $this->Html->script('home', array('inline' => false));
@@ -8,24 +8,33 @@ $this->Html->css('home', null, array('inline' => false));
       <tr>
         <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('action' => 'home'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><a href="#" class="main_link">Gallery</a></div></td>
-        <td><div class="navigation"><?php echo $this->Html->link(__('About'), array('controller' => 'about', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
+        
+        <?php foreach ($abouts as $about): ?>
+        <td><div class="navigation"><?php echo $this->Html->link(__('About'), array('action' => 'us', $about['About']['id']),array('class' => 'main_link'));?></div>&nbsp;</td>
+        <?php 
+        break;
+        endforeach; ?>
+        <td><div class="navigation"><?php //echo $this->Html->link(__('About'), array('controller' => 'about', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
+        
+        
         <td><div class="navigation"><a href="#" class="main_link">Help</a></div></td>
         <td><div class="navigation"><?php echo $this->Html->link(__('Contact Us'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
       </tr>
     </table></td>
-    <fieldset>
-        
-       <?php echo $this->Html->link(__('View'), array('controller' => 'about', 'action' => 'view', $about['About']['id'])); ?>
-    <?php
-    
-    
-		//this can  be shown later
-		//echo $this->Form->input('User.whois');
-		
-       
-    ?>
-   
-    </fieldset>
- 
 
 </div>
+<h2><?php  echo __('What we do?'); ?></h2>
+	<dl>
+
+		<table>
+		 <?php foreach ($abouts as $about): ?>
+		 <dt></dt>
+		<dd>
+			<?php echo h($about['About']['body']); ?>
+			&nbsp;
+		</dd>
+		 <?php endforeach; ?>
+	</table>
+	</dl>
+</div>
+

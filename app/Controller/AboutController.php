@@ -6,19 +6,15 @@ class AboutController extends AppController{
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login', 'register', 'index','contact');
+		$this->Auth->allow('login', 'register', 'index','contact','us');
 	}
 	
 	/**
 	 * Show the dynamic content created
 	 */
 	public function index(){
-		//$this->About->id = $id;
 		$this->About->recursive = 0;
-		//debug($this->About->id);
-		/*if (!$this->About->exists()) {
-			throw new NotFoundException(__('Invalid about content'));
-		}*/
+		$this->set('groupid', $this->Auth->user('group_id'));
 		$this->set('abouts', $this->paginate());
 	}
 	/**
@@ -48,12 +44,20 @@ class AboutController extends AppController{
 		
 	}
 	
-	public function view($id = null){
-		$this->Note->id = $id;
-		if (!$this->Note->exists()) {
+	public function us($id = null){
+		
+		$this->About->recursive = 0;
+		$this->set('groupid', $this->Auth->user('group_id'));
+		$this->set('abouts', $this->paginate());
+		$this->About->id = $id;
+
+		if (!$this->About->exists()) {
 			throw new NotFoundException(__('Invalid note'));
 		}
-		$this->set('note', $this->Note->read(null, $id));
+		//else{
+		//	$this->redirect(array('action' => 'view', $id));
+		//}
+		$this->set('about', $this->About->read(null, $id));
 	}
 	
 }
