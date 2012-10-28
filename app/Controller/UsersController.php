@@ -25,6 +25,9 @@ class UsersController extends AppController {
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
+		$groupid = $this->Auth->user('group_id');
+		$this->set('groupid', $groupid);
+		
 	}
 	
 	/**
@@ -49,6 +52,8 @@ class UsersController extends AppController {
 		$this->Acl->deny($group, 'controllers');
 		$this->Acl->allow($group, 'controllers/Notes/add');
 		$this->Acl->allow($group, 'controllers/Users/add');
+		$this->Acl->allow($group, 'controllers/Users/view');
+		$this->Acl->allow($group, 'controllers/Users/edit');
 		$this->Acl->allow($group, 'controllers/Users/logout');
 		
 		//allow users to interact with own profile only
@@ -163,11 +168,17 @@ class UsersController extends AppController {
 	public function edit($id = null) {
 		$this->User->id = $id;
 		$groupid = $this->Auth->user('group_id');
+		
+		
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
+	
 		if ($this->request->is('post') || $this->request->is('put')) {
+			
+			
 			if ($this->User->save($this->request->data)) {
+				
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -216,9 +227,9 @@ class UsersController extends AppController {
 			$groupid = $this->Auth->user('group_id');
 			
 			if($groupid == 1 or $groupid == 2){
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
 			} else {
-				$this->redirect(array('action' => 'view', $id));
+				//$this->redirect(array('action' => 'view', $id));
 			}
 			
 		} else {
@@ -242,13 +253,13 @@ class UsersController extends AppController {
 		}
 	}
 	
-	public function home(){
+	//public function home(){
 		
-	}
+	//}
 	
-	public function contact(){
+	//public function contact(){
 		
-	}
+	//}
 	
 	
 	/**

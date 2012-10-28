@@ -6,7 +6,7 @@ $this->Html->css('home', null, array('inline' => false));
 ?>
  <td class="horizontal_center"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="linkcontainer">
       <tr>
-        <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('action' => 'home'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('controller' => 'home', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><a href="#" class="main_link">Gallery</a></div></td>
         
         <?php foreach ($abouts as $about): ?>
@@ -17,24 +17,31 @@ $this->Html->css('home', null, array('inline' => false));
         <td><div class="navigation"><?php //echo $this->Html->link(__('About'), array('controller' => 'about', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
         
         
-        <td><div class="navigation"><a href="#" class="main_link">Help</a></div></td>
-        <td><div class="navigation"><?php echo $this->Html->link(__('Contact Us'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><?php echo $this->Html->link(__('Services'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><?php echo $this->Html->link(__('Contact'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
       </tr>
     </table></td>
 
 </div>
+<div class="users index">
 <h2><?php  echo __('What we do?'); ?></h2>
-	<dl>
+	
 
 		<table>
+		
 		 <?php foreach ($abouts as $about): ?>
-		 <dt></dt>
-		<dd>
+		
+		 <tr>
+			<h3><b><?php echo h($about['About']['title']); ?></b></h3>
+			<p>
 			<?php echo h($about['About']['body']); ?>
-			&nbsp;
-		</dd>
+			</p>
+			
+		
+		</tr>
 		 <?php endforeach; ?>
+		 
 	</table>
-	</dl>
+	
 </div>
 

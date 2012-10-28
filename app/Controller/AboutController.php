@@ -1,8 +1,10 @@
 <?php
 App::uses('AppController', 'Controller');
 
-
+$usid = null;
 class AboutController extends AppController{
+	
+	
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -13,8 +15,24 @@ class AboutController extends AppController{
 	 * Show the dynamic content created
 	 */
 	public function index(){
-		$this->About->recursive = 0;
-		$this->set('groupid', $this->Auth->user('group_id'));
+		//$id = $this->us($id);
+		
+		$params = array(
+			'fields' => array('id'),
+			'contains' => array(
+					'About' => array(
+							'fields' => array('id', 'title', 'body')
+							)
+					)
+				
+		);
+		$this->About->Behaviors->attach('Containable');
+		$data = $this->About->find('first', $params);
+		$id = $data['About']['id'];
+
+		$this->redirect(array('action' => 'us', $id));
+		//$this->About->recursive = 0;
+		//$this->set('groupid', $this->Auth->user('group_id'));
 		$this->set('abouts', $this->paginate());
 	}
 	/**
@@ -35,6 +53,36 @@ class AboutController extends AppController{
 		
 	}
 	
+	public function backend(){
+		$this->About->recursive = 0;
+		$this->set('groupid', $this->Auth->user('group_id'));
+		$this->set('abouts', $this->paginate());
+	}
+	
+	/**
+	 * delete method
+	 *
+	 * @throws MethodNotAllowedException
+	 * @throws NotFoundException
+	 * @param string $id
+	 * @return void
+	 */
+	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
+		$this->About->id = $id;
+		if (!$this->About->exists()) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		if ($this->About->delete()) {
+			$this->Session->setFlash('About content deleted', 'success');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash(__('About content was not deleted'));
+		$this->redirect(array('action' => 'index'));
+	}
+	
 	/**
 	 * Dynamically edit the content
 	 * Of the about page
@@ -50,14 +98,20 @@ class AboutController extends AppController{
 		$this->set('groupid', $this->Auth->user('group_id'));
 		$this->set('abouts', $this->paginate());
 		$this->About->id = $id;
-
+	
 		if (!$this->About->exists()) {
 			throw new NotFoundException(__('Invalid note'));
 		}
 		//else{
 		//	$this->redirect(array('action' => 'view', $id));
 		//}
+		$usid = $id;
 		$this->set('about', $this->About->read(null, $id));
+		return $id;
+	}
+	
+	private function getUsId(){
+		
 	}
 	
 }

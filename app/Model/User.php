@@ -1,4 +1,5 @@
 <?php
+App::import('component', 'CakeSession');
 App::uses('AppModel', 'Model');
 /**
  * User Model
@@ -114,42 +115,33 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'group_id-Rule2' => array(
-				'rule' => array('comparison', '>', 1),
-				'message' => 'You are not authorized to save this user to the developers group.'
+				'rule' => array('validateGroupEdit'),
+				'message' => 'You are not authorized to save this user to the selected group.'
 			)
 		),
 	);
 	
 	
 	
-	function validateMaxGrade($data) {
+	function validateGroupEdit($data) {
+		
+		$thisgroupID = CakeSession::read('Auth.User.group_id');
+		
+		
+		
 		$result = false;
-		if (isset($this->data['School']['mingrade']) && isset($this->data['School']['maxgrade'])) {
-			$mingrade = $this->data['School']['mingrade'];
-			$maxgrade = $this->data['School']['maxgrade'];
+		if (isset($this->data['User']['group_id'])) {
+			$groupid = $this->data['User']['group_id'];
 		} else {
-			$mingrade = $this->field('mingrade');
-			$maxgrade = $this->field('maxgrade');
+			$groupid = $this->field('group_id');
 		}
+		
 
-		if($maxgrade < 13){
-				if($mingrade == 'PK' || $mingrade == 'K'){
-					$mingrade = 0;
-				}
-				// Maximum grade has to be greater than the minimum grade
-				if($maxgrade > $mingrade){
-					
-					return true;
-				}
-				// Maximum grade has to be greater than the minimum grade
-				elseif($maxgrade <= $mingrade){
-					return false;
-				}
-				else {
-					return false;
-				}		
-		} else {
+		
+		if($groupid < $thisgroupID){
 			return false;
+		} else {
+			return true;
 		}
 		
 
