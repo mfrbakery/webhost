@@ -101,6 +101,7 @@ class UsersController extends AppController {
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
+		debug($groups);
 	}
 	
 	/**

@@ -48,12 +48,13 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Subjects'), array('controller' => 'subjects', 'action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Requests'), array('controller' => 'requestrecords', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Notes'), array('controller' => 'notes', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Note'), array('controller' => 'notes', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Sign out'), array('controller' => 'users', 'action' => 'logout')); ?> </li>
-		<li><?php echo $this->Html->link(__('About Content'), array('controller' => 'about', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('About Content'), array('controller' => 'about', 'action' => 'backend')); ?> </li>
 	</ul>
 </div>
