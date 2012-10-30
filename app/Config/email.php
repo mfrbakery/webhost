@@ -93,5 +93,13 @@ class EmailConfig {
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
+	
+	public $gmail = array(
+			'host' => 'ssl://smtp.gmail.com',
+			'port' => 465,
+			'username' => 'adam.david.rodriguez',
+			'password' => '628749636MatrixNeo!',
+			'transport' => 'Smtp'
+	);
 
 }

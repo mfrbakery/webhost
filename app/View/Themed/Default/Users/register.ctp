@@ -11,7 +11,8 @@ $this->Html->css('auth', null, array('inline' => false));
 		echo $this->Form->input('username');
 		echo $this->Form->input('password');
 		echo $this->Form->input('User.confirmpassword', array('label' => 'Confirm Password', 'type'=>'password'));
-		echo $this->Form->input('RequestRecord.service_id', array('label' => 'Please select from any of the options below:', 'type' => 'select', 'options' => $allservices,  'multiple' => true ));
+		echo $this->Form->input('useremail', array('label' => 'Please enter your email address.'));
+		//echo $this->Form->input('RequestRecord.service_id', array('label' => 'Please select from any of the options below:', 'type' => 'select', 'options' => $allservices,  'multiple' => true ));
 		echo $this->Form->hidden('group_id', array('default' => 4));
 		//echo $this->Form->hidden('id');
 	?>

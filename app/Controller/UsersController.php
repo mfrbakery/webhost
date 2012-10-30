@@ -114,7 +114,7 @@ class UsersController extends AppController {
 	 	$allservices = $this->GetServices();
 	 	$this->loadModel('RequestRecord');
 	
-		if ($this->request->is('post') && !empty($this->request->data['RequestRecord']['service_id'])) {
+		if ($this->request->is('post')) {
 			// Get the user id
 			
 			// Get the serviceid
