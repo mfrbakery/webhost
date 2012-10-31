@@ -17,7 +17,17 @@ class ContactController extends AppController{
 		if($this->request->is('post')){
 			$this->Contact->create();
 			if($this->Contact->save($this->request->data)){
-				$this->emailsender();
+				$to = $this->request->data['Contact']['email'];
+				$subjectid = $this->request->data['Contact']['subject_id'];
+				debug($subjectid);
+				$parms = array(
+						'fields' => array('id','name'),
+						'conditions' => array('Subject.id' => $subjectid)
+						
+						);
+				$found = $this->Contact->Subject->find('all', $parms);
+				debug($found);
+				$this->emailsender($to);
 				$this->Session->setFlash('Thank you for contacting us.  Your input is greatly appreciated!','success');
 			} else {
 				$this->Session->setFlash('Unable to send message, please try again later.');
@@ -25,10 +35,10 @@ class ContactController extends AppController{
 		}
 	}
 	
-	public function emailsender(){
+	public function emailsender($to){
 		$email = new CakeEmail('gmail');
-		$email->from(array('adam.david.rodriguez@gmail.com' => 'Adam Rodriguez'))
-		->to('adam.rodriguez@basiseducation.net')
+		$email->from(array('Adam@techbaseit.com' => 'Adam Rodriguez'))
+		->to($to)
 		->subject('About')
 		->send('My message');
 	}

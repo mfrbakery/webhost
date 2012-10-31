@@ -14370,3 +14370,71 @@
 2012-10-30 09:19:34 Error: [MissingControllerException] Controller class JsController could not be found.
 #0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-10-30 20:20:54 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 20:21:51 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 20:35:50 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 20:38:51 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 20:57:59 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:02:02 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:09:38 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:11:38 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:12:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:17:20 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:18:22 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:18:24 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:18:24 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:18:36 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:23:49 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [/var/www/webhost/app/Controller/ContactController.php, line 29]
+2012-10-30 21:23:49 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 /var/www/webhost/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/webhos...', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/webhos...', 29, Array)
+#2 /var/www/webhost/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/webhos...', 29, Array)
+#3 /var/www/webhost/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-30 21:23:49 Error: [MissingControllerException] Controller class ThemeController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:24:10 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:24:15 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 21:24:22 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 22:50:54 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-30 22:52:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
