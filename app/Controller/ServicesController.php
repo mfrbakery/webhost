@@ -5,7 +5,7 @@ class ServicesController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login', 'register', 'index','contact','us');
+		$this->Auth->allow('login', 'register', 'index','us');
 	}
 	
 	public function index(){
