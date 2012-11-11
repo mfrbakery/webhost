@@ -1,4 +1,9 @@
 <div class="Subjects index">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 	<h2><?php echo __('Subjects'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -12,7 +17,7 @@
 	foreach ($subjects as $subject): ?>
 	<tr>
 	
-		<td><?php echo h($subject['Subject']['subject']); ?>&nbsp;</td>
+		<td><?php echo h($subject['Subject']['name']); ?>&nbsp;</td>
 		<td><?php echo h($subject['Subject']['email_body']); ?>&nbsp;</td>
 		
 		<td><?php echo h($subject['Subject']['created']); ?>&nbsp;</td>

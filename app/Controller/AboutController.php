@@ -105,9 +105,9 @@ class AboutController extends AppController{
 		//else{
 		//	$this->redirect(array('action' => 'view', $id));
 		//}
-		$usid = $id;
+		
 		$this->set('about', $this->About->read(null, $id));
-		return $id;
+	
 	}
 	
 	private function getUsId(){

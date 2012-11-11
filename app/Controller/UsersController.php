@@ -107,6 +107,7 @@ class UsersController extends AppController {
 	/**
 	 * front-end registering of users
 	 */
+	//@todo redo this
 	public function register() {
 		
 		

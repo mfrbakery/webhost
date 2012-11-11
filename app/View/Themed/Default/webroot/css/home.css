@@ -16,19 +16,32 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-* {
-	margin:0;
-	padding:0;
-}
+
 
 /** General Style Info **/
 body {
-	background: #000;
-	color: #fff;
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:90%;
-	margin: 0;
+	margin: 0px;
+	background-color: #333333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
 }
+td.middle_spacer {
+	width: 800px;
+	background-color: #666666;
+}
+td.shadow_right {
+	background-image: url(../img/border_shadow_l.jpg);
+	background-repeat: repeat-y;
+	background-position: left;
+	
+}
+td.shadow_left {
+	background-image: url(../img/border_shadow_r.jpg);
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+
 a {
 	color: #003d4c;
 	text-decoration: underline;
@@ -51,7 +64,7 @@ h1 {
 	font-size: 100%;
 }
 h2 {
-	background:#fff;
+	background:#444;
 	color: #e32;
 	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
@@ -75,6 +88,7 @@ p {
 /** Layout **/
 #container {
 	text-align: left;
+	background: #111;
 }
 
 #header{
@@ -84,44 +98,44 @@ p {
 #header h1 {
 	float:right;
 	line-height:20px;
-	background: #000;
-	color: #444;
+	background: #111;
+	color: #111;
 	padding: 0px 30px;
 }
 #header h2 {
 	float:left;
 	line-height:20px;
-	background: #000;
-	color: #fff;
+	background: #111;
+	color: #444;
 	padding: 0px 30px;
 }
 #header h2 a {
 	color: #058FF2;
-	background: #000;
+	background: #111;
 	font-weight: normal;
 	text-decoration: none;
 }
 #header h1 a {
 	color: #058FF2;
-	background: #000;
+	background: #111;
 	font-weight: normal;
 	text-decoration: none;
 }
 #header h1 a:hover {
-	color: #fff;
+	color: #444;
 	background: #000;
 	text-decoration: underline;
 }
 #content{
-	background: #ddd;
+	background: #333;
 	clear: both;
 	color: #888;
-	padding: 80px 20px 40px 20px;
+	padding: 0px 0px 0px 0px;
 	overflow: auto;
 }
 #footer {
 	clear: both;
-	padding: 6px 10px;
+	padding: 0px 1px;
 	text-align: right;
 }
 
@@ -129,8 +143,9 @@ p {
 div.form,
 div.index,
 div.view {
-	float:right;
-	width:50%;
+	float:center;
+	width:90%;
+	
 	border:none;
 	padding:10px 4%;
 }
@@ -146,16 +161,10 @@ div.actions h3 {
 
 
 /** Tables **/
-table {
-	border-right:0;
-	clear: both;
-	color: #333;
-	margin-bottom: 10px;
-	width: 100%;
-}
+
 th {
 	border:0;
-	border-bottom:2px solid #555;
+	border-bottom:0px solid #555;
 	text-align: left;
 	padding:4px;
 }
@@ -171,10 +180,10 @@ th a.desc:after {
 	content: ' ⇡';
 }
 table tr td {
-	padding: 6px;
-	text-align: left;
+	padding: 0px;
+	text-align: center;
 	vertical-align: top;
-	border-bottom:1px solid #ddd;
+	border-bottom:0px solid #333;
 }
 table tr:nth-child(even) {
 	background: #f9f9f9;
@@ -193,8 +202,9 @@ table.linkcontainer td{
 	opacity: .7;
 	-moz-opacity: .7;
 }
-td.horizontal_center {
-	background-color: #FFFFFF;
+
+td.horizontal_column {
+	background-color: #000000;
 	border-top-width: 15px;
 	border-right-width: 0px;
 	border-bottom-width: 1px;
@@ -204,13 +214,42 @@ td.horizontal_center {
 	border-bottom-style: solid;
 	border-left-style: solid;
 	border-top-color: #000000;
-	border-right-color: #333333;
+	border-right-color: #000000;
 	border-bottom-color: #000000;
-	border-left-color: #333333;
+	border-left-color: #000000;
 	height: 150px;
 	display: table-cell;
 	vertical-align: top;
-	background-image: url(../images_template1/header_bg.jpg);
+}
+
+td.header_column {
+	height: 150px;
+	color: #333;
+	font-size: large;
+	background-image: url(../img/header_bg.jpg);
+	background-size: 100%;
+	vertical-align: top;
+}
+
+td.horizontal_center {
+	background-color: #333;
+	border-top-width: 15px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #333333;
+	border-bottom-color: #000000;
+	border-left-color: #333333;
+	height: 100px;
+	width: 65%;
+	display: table-cell;
+	vertical-align: center;
+	background-image: url(../img/header_bg.jpg);
 }
 
 /* SQL log */
@@ -303,7 +342,7 @@ form {
 fieldset {
 	border: none;
 	margin-bottom: 1em;
-	padding: 16px 10px;
+	padding: 10px 5px;
 }
 fieldset legend {
 	color: #e32;
@@ -352,7 +391,7 @@ label {
 }
 input, textarea {
 	vertical-align: middle;
-	text-align: center;
+	text-align: left;
 	clear: both;
 	font-size: 100%;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
@@ -553,7 +592,7 @@ a.main_link:active,a.main_link:visited,a.main_link:link{
 	display: block;
 	width: 100%;
 	color: #FFFFFF;
-	line-height: 50px;
+	line-height: 72px;
 }
 a.main_link:hover{
 	background-color:#333333;
@@ -568,7 +607,7 @@ a.bottom_link:hover{
 	color: #CCCCCC;
 }
 div.bottom_content{
-	color: #FFFFFF;
+	color: #333;
 	padding: 5px;
 }
 div.navigation {
@@ -629,7 +668,7 @@ input[type=submit]:active,
 }
 .required {
 	font-weight: bold;
-	padding: 1.5%;
+	padding: 0.5%;
 }
 .required label:after {
 	color: #e32;
