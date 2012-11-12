@@ -25,7 +25,7 @@ $this->Html->css('home', null, array('inline' => false));
         <td><div class="navigation"><?php //echo $this->Html->link(__('About'), array('controller' => 'about', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
         
         
-        <td><div class="navigation"><?php echo $this->Html->link(__('Services'), array('action' => 'contact'),array('class' => 'main_link'));?></div></td>
+        <td><div class="navigation"><?php echo $this->Html->link(__('Services'), array('controller' => 'services', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
         <td><div class="navigation"><?php echo $this->Html->link(__('Contact'), array('controller' => 'contact', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
      
      </tr>

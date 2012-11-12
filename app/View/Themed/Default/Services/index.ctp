@@ -1,4 +1,10 @@
 <div class="services index">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
+
 	<h2><?php echo __('Services'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -11,11 +17,7 @@
 	<tr>
 		<td><?php echo h($service['Service']['id']); ?>&nbsp;</td>
 		<td><?php echo h($service['Service']['servicename']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $service['Service']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $service['Service']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $service['Service']['id']), null, __('Are you sure you want to delete # %s?', $service['Service']['id'])); ?>
-		</td>
+		
 	</tr>
 <?php endforeach; ?>
 	</table>
