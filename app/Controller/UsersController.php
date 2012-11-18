@@ -112,53 +112,29 @@ class UsersController extends AppController {
 		
 		
 		
-	 	$allservices = $this->GetServices();
+	 	
 	 	$this->loadModel('RequestRecord');
 	
 		if ($this->request->is('post')) {
 			// Get the user id
 			
 			// Get the serviceid
-			
+			//debug($this->request->data);
 			$this->User->create();
 			
 			if ($this->User->save($this->request->data) ) {
-
+					$this->User->saveField('group_id', 4);
 				$this->Session->setFlash('The user has been saved', 'success');
 				//$this->redirect(array('action' => 'login'));
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
-		} else {
-			$this->Session->setFlash('All fields are required', 'information');
-		}
+		} 
 
-		$userid = $this->User->id;
-		$username = null;
 		
-		if(!empty($this->data['User']['username'])){
-			$username = $this->data['User']['username'];
-		}
-		//debug($username);
-		$serviceselection = '';
-		
-		if(!empty($this->request->data['RequestRecord']['service_id'])){
-			$serviceid = $this->request->data['RequestRecord']['service_id'];
-			$serviceselection = implode(', ', $serviceid);
-		}
-		
-		$this->RequestRecord->set(array('user_id' => $userid, 'service_id' => $serviceselection, 'user_username' => $username));
-		if($this->RequestRecord->save())
-		$this->redirect(array('action' => 'login'));
-		
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
-		$this->set('allservices', $allservices);
 	}
 	
-	public function about(){
-		
-	}
+	
 
 /**
  * edit method

@@ -114,7 +114,8 @@ p {
 div.form,
 div.index,
 div.view {
-	float:right;
+	margin-left:auto;
+	margin-right:auto;
 	width:76%;
 	border-left:1px solid #666;
 	padding:10px 2%;

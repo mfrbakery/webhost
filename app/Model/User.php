@@ -79,18 +79,12 @@ class User extends AppModel {
 			)
 		),
 		'useremail' => array(
-					'useremailRule-1' => array(
-							'rule' => array('notEmpty'),
-							'message' => 'This field cannot be left blank.'
-							),
+					
 					'useremailRule-2' => array(
 							'rule' => array('email'),
 							'message' => 'The email address must be valid.'
 							),
-					'useremailRule-3' => array(
-							'rule' => 'required',
-							'message' => 'An email address is required.'
-							)
+					
 		),
 		'password' => array(
 			'notempty' => array(

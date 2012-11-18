@@ -1,5 +1,9 @@
 
+<?php
+// in your view file
 
+$this->Html->css('home', null, array('inline' => false));
+?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
   <tr>
@@ -8,7 +12,7 @@
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="linkcontainer">
       <tr>
       
-      <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('action' => 'index'),array('class' => 'main_link'));?></div></td>
+      <td><div class="navigation"><?php echo $this->Html->link(__('Home'), array('controller' => 'home', 'action' => 'index'),array('class' => 'main_link'));?></div></td>
 		        <td><div class="navigation"><a href="#" class="main_link">Gallery</a></div></td>
 		       
 		      
@@ -55,7 +59,7 @@
 
 
 
-<div class="contacts form">
+<div class="index">
 <?php
 // in your view file
 $this->Html->script('home', array('inline' => false));
@@ -69,7 +73,7 @@ $this->Html->css('home', null, array('inline' => false));
 	<?php
 		echo $this->Form->input('subject_id');
 		echo $this->Form->input('email');
-		echo $this->Form->input('body');
+		echo $this->Form->input('body', array('label' => 'Please enter your message below:'));
 		
 	
 	?>

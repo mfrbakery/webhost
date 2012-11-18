@@ -64,7 +64,7 @@ $this->Html->css('home', null, array('inline' => false));
     
     
 
-<div class="users index">
+<div class="index">
 <h2><?php  echo __('What we do?'); ?></h2>
 	
 
