@@ -59,15 +59,21 @@ $this->Html->css('home', null, array('inline' => false));
 
 
 
-<div class="index">
+<div class="center">
 <?php
 // in your view file
 $this->Html->script('home', array('inline' => false));
 $this->Html->css('home', null, array('inline' => false));
 ?>
+
 <?php echo $this->Form->create('Contact')?>
 
 	<fieldset>
+		<div class="right">
+	
+ <?php //echo $this->Html->image('email.png', array('alt' => 'CakePHP', 'width' => '450px'));?>
+ 
+ </div>
 	<legend><?php echo __('Contact Us')?></legend>
 	
 	<?php
@@ -75,10 +81,12 @@ $this->Html->css('home', null, array('inline' => false));
 		echo $this->Form->input('email');
 		echo $this->Form->input('body', array('label' => 'Please enter your message below:'));
 		
+		
 	
 	?>
-	
+
 	
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
+
 </div>

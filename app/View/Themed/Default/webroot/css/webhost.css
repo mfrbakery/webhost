@@ -23,11 +23,13 @@
 
 /** General Style Info **/
 body {
+	margin-left:auto;
+	margin-right:auto;
 	background: #003d4c;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
-	margin: 0;
+	
 }
 a {
 	color: #003d4c;
@@ -112,7 +114,13 @@ p {
 
 /** containers **/
 div.form,
-div.index,
+div.index{
+	margin-left:auto;
+	margin-right:auto;
+	width:76%;
+	border-left:1px solid #666;
+	padding:10px 2%;
+	}
 div.view {
 	margin-left:auto;
 	margin-right:auto;
@@ -262,6 +270,8 @@ form {
 	width: 95%;
 }
 fieldset {
+	margin-right:auto;
+	margin-left:auto;
 	border: none;
 	margin-bottom: 1em;
 	padding: 16px 10px;
@@ -291,6 +301,7 @@ form div {
 }
 form .input {
 	color: #444;
+	horizontal-align:middle;
 }
 form .required {
 	font-weight: bold;
@@ -306,7 +317,8 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
-	display: block;
+	margin-left:auto;
+	margin-right:auto;
 	font-size: 110%;
 	margin-bottom:3px;
 }

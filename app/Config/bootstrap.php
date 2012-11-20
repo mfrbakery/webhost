@@ -102,8 +102,10 @@ Cache::config('default', array('engine' => 'File'));
  * Acl Extras Plugin
  */
 CakePlugin::load('AclExtras');
-
-
+/**
+ * Feeds Plugin
+ */
+CakePlugin::load('Feeds');
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *

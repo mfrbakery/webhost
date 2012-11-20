@@ -1,4 +1,9 @@
 <div class="groups form">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 <?php echo $this->Form->create('Group'); ?>
 	<fieldset>
 		<legend><?php echo __('Add New Group'); ?></legend>

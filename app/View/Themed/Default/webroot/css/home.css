@@ -20,7 +20,8 @@
 
 /** General Style Info **/
 body {
-	margin: 0px;
+	margin-left:auto;
+	margin-right:auto;
 	background-color: #333333;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -82,7 +83,7 @@ ul, li {
 	margin: 0 12px;
 }
 p {
-	margin: 0 0 1em 0;
+	
 }
 
 /** Layout **/
@@ -140,11 +141,12 @@ p {
 }
 
 /** containers **/
-div.form,
-div.index {
-	float:middle;
-	border-bottom:3px solid #555;
-}
+div.form{
+	margin-right:auto;
+	margin-left:auto;
+	
+	}
+
 div.view {
 	float:center;
 	width:90%;
@@ -161,6 +163,27 @@ div.actions h3 {
 	padding-top:0;
 	color:#777;
 }
+div.center
+{
+margin-left:auto;
+margin-right:auto;
+width:50%;
+background-color:#b0e0e6;
+border-bottom:3px solid #555;
+}
+div.right
+{
+	vertical-align:text-top;
+position:absolute;
+right:500px;
+width:300px;
+height:200px;
+
+}
+div.img
+{
+vertical-align:text-top;
+} 
 
 
 /** Tables **/
@@ -338,11 +361,13 @@ dd {
 /** Forms **/
 form {
 	clear: both;
-	margin-right: 00px;
+	margin-left: 50px;
 	padding: 0;
 	width: 95%;
 }
 fieldset {
+	margin-right:auto;
+	margin-left:auto;
 	border: none;
 	margin-bottom: 1em;
 	padding: 10px 1px;
@@ -370,6 +395,13 @@ form div {
 	padding: .5em;
 	vertical-align: text-top;
 }
+form .center
+{
+margin-left:auto;
+margin-right:auto;
+width:70%;
+background-color:#b0e0e6;
+}
 form .input {
 	float:middle;
 	color: #000;
@@ -388,18 +420,21 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
+	margin-left:auto;
+	margin-right:auto;
 	display: block;
 	font-size: 110%;
 	margin-bottom:3px;
 }
 input, textarea {
-	vertical-align: middle;
+	margin-right:auto;
+	margin-left:auto;
 	text-align: left;
 	clear: both;
 	font-size: 100%;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
-	width:50%;
+	width:85%;
 }
 select {
 	clear: both;
@@ -454,9 +489,9 @@ form .submit input[type=submit]:hover {
 /* Form errors */
 form .error {
 	background: #FFDACC;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
 	font-weight: normal;
 }
 form .error-message {
@@ -466,7 +501,7 @@ form .error-message {
 	border: none;
 	background: none;
 	margin: 0;
-	padding-left: 4px;
+	padding-left: 0px;
 	padding-right: 0;
 }
 form .error,

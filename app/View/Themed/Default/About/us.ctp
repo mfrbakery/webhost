@@ -64,7 +64,7 @@ $this->Html->css('home', null, array('inline' => false));
     
     
 
-<div class="index">
+<div class="center">
 <h2><?php  echo __('What we do?'); ?></h2>
 	
 

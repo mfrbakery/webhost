@@ -1,4 +1,9 @@
 <div class="Abouts index">
+<?php
+// in your view file
+$this->Html->script('auth', array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
+?>
 	<h2><?php echo __('About Content'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
