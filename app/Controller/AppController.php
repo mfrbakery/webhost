@@ -32,6 +32,7 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $theme = 'Bootstrap';
 	
 	public $components = array(
 			'Acl',
@@ -46,9 +47,26 @@ class AppController extends Controller {
 	
 	public function beforeFilter() {
 		//Configure AuthComponent
+		$this->Auth->allow('*');
 		$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
 		$this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
 		$this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');
+	}
+	
+	public function index() {
+	
+	}
+	
+	public function components() {
+	
+	}
+	
+	public function base_css() {
+	
+	}
+	
+	public function javascript() {
+	
 	}
 	
 }

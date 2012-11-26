@@ -1,0 +1,53 @@
+2012-11-25 05:28:51 Error: [MissingControllerException] Controller class HomeController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:28:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:29:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:46:54 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:46:57 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:06 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:08 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:18 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:20 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:37 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-25 05:47:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-26 06:33:49 Error: [MissingActionException] Action AppController::base_css() could not be found.
+#0 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-11-26 06:34:02 Error: [MissingActionException] Action AppController::javascript() could not be found.
+#0 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-11-26 06:34:04 Error: [MissingActionException] Action AppController::components() could not be found.
+#0 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-11-26 06:34:05 Error: [MissingActionException] Action AppController::index() could not be found.
+#0 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/webhost/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/webhost/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

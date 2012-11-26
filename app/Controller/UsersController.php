@@ -12,7 +12,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('register');
+		$this->Auth->allow('*');
 		$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 /**
