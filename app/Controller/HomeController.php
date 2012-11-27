@@ -28,11 +28,12 @@ class HomeController extends AppController{
 		
 	
 		foreach($elements as $element){
-			debug($element);
+			//debug($element);
 		}
 		$this->loadModel('About');
 		$this->About->recursive = 0;
 		$this->set('groupid', $this->Auth->user('group_id'));
-		$this->set('abouts', $this->paginate());
+		$this->set('abouts', $this->paginate('About'));
+		//debug($this->paginate('About'));
 	}
 }

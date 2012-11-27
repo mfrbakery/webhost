@@ -22,7 +22,7 @@ class PostsController extends AppController {
 	public function index() {
 		$this->Post->recursive = 0;
 		$this->set('groupid', $this->Auth->user('group_id'));
-		$this->set('Posts', $this->paginate());
+		$this->set('posts', $this->paginate());
 	}
 
 /**

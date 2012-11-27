@@ -8,13 +8,11 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	
-	public $view   = 'Theme';
 	
-	public $theme = 'Default';
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('login', 'register', 'about','contact');
+		$this->Auth->allow('login', 'register', 'about','contact', '*');
 		$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 /**

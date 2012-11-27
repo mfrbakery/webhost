@@ -2,7 +2,7 @@
 <?php
 // in your view file
 
-$this->Html->css('home', null, array('inline' => false));
+$this->Html->css('auth', null, array('inline' => false));
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
@@ -71,7 +71,7 @@ $this->Html->css('home', null, array('inline' => false));
 	<fieldset>
 		<div class="right">
 	
- <?php //echo $this->Html->image('email.png', array('alt' => 'CakePHP', 'width' => '450px'));?>
+ <?php echo $this->Html->image('email.png', array('alt' => 'CakePHP', 'width' => '450px'));?>
  
  </div>
 	<legend><?php echo __('Contact Us')?></legend>

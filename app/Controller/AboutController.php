@@ -89,29 +89,40 @@ class AboutController extends AppController{
 	 * @param unknown_type $id
 	 */
 	public function edit($id = null){
+		$this->About->id = $id;
+		if (!$this->About->exists()) {
+			throw new NotFoundException(__('Invalid about content'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->About->save($this->request->data)) {
+				$this->Session->setFlash('The about content has been saved', 'success');
+				$this->redirect(array('action' => 'backend'));
+			} else {
+				$this->Session->setFlash(__('The about content could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->request->data = $this->About->read(null, $id);
+		}
 		
 	}
 	
-	public function us($id = null){
+	public function us(){
 		
 		$this->About->recursive = 0;
 		$this->set('groupid', $this->Auth->user('group_id'));
 		$this->set('abouts', $this->paginate());
-		$this->About->id = $id;
 	
-		if (!$this->About->exists()) {
-			throw new NotFoundException(__('Invalid note'));
-		}
+		//$this->About->id = $id;
+	
+		//if (!$this->About->exists()) {
+			//throw new NotFoundException(__('Invalid note'));
+		//}
 		//else{
 		//	$this->redirect(array('action' => 'view', $id));
 		//}
 		
-		$this->set('about', $this->About->read(null, $id));
+		//$this->set('about', $this->About->read(null, $id));
 	
-	}
-	
-	private function getUsId(){
-		
 	}
 	
 }
