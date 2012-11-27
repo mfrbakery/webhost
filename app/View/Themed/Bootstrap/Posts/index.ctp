@@ -1,7 +1,6 @@
 
 <?php
-// in your view file
-$this->Html->script('home', array('inline' => false));
+
 $this->Html->css('bootstrap-custom', null, array('inline' => false));
 ?>    
     

@@ -36,4 +36,12 @@ class HomeController extends AppController{
 		$this->set('abouts', $this->paginate('About'));
 		//debug($this->paginate('About'));
 	}
+	
+	public function edit(){
+		
+	}
+	
+	public function delete(){
+		
+	}
 }

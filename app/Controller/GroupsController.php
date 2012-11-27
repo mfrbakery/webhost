@@ -38,6 +38,10 @@ class GroupsController extends AppController {
 		}
 		$this->set('group', $this->Group->read(null, $id));
 	}
+	
+	public function retrieve(){
+		
+	}
 
 /**
  * add method

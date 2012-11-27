@@ -49,7 +49,7 @@ class AppController extends Controller {
 	
 	public function beforeFilter() {
 		//Configure AuthComponent
-		$this->Auth->allow('*');
+		//$this->Auth->allow('*');
 		$this->Auth->loginAction = array('controller' => 'home', 'action' => 'index');
 		$this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
 		$this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');
