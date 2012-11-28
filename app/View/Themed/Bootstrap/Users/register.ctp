@@ -8,7 +8,7 @@ $this->Html->css('auth', null, array('inline' => false));
 	<fieldset>
 		<legend><?php echo __('Register'); ?></legend>
 	<?php
-		echo $this->Form->input('username');
+		echo $this->Form->input('name');
 		echo $this->Form->input('password');
 		echo $this->Form->input('User.confirmpassword', array('label' => 'Confirm Password', 'type'=>'password'));
 		echo $this->Form->input('useremail', array('label' => 'Please enter your email address.'));

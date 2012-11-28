@@ -17,8 +17,16 @@
     .navbar-wrapper {
       position: relative;
       z-index: 10;
-      margin-top: 20px;
+      margin-top: -10px;
       margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+
+	/* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-fixed-top {
+      position: relative;
+      z-index: 10;
+      margin-top: -90px;
+      margin-bottom: 0px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
     }
 
     /* Remove border and change up box shadow for more contrast */
@@ -191,6 +199,7 @@
     margin-right: -20px;
     margin-left: -20px;
   }
+
 
       .carousel {
         margin-left: -20px;

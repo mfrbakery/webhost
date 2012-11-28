@@ -2,6 +2,8 @@
 <?php
 // in your view file
 $this->Html->script('auth', array('inline' => false));
+$this->Html->css('webhost', null, array('inline' => false));
+$this->Html->css('home', null, array('inline' => false));
 $this->Html->css('auth', null, array('inline' => false));
 ?>
 <h2><?php  echo __('Group'); ?></h2>
@@ -57,7 +59,7 @@ $this->Html->css('auth', null, array('inline' => false));
 		foreach ($group['User'] as $user): ?>
 		<tr>
 			<td><?php echo $user['id']; ?></td>
-			<td><?php echo $user['username']; ?></td>
+			<td><?php echo $user['name']; ?></td>
 			<td><?php echo $user['password']; ?></td>
 			<td><?php echo $user['group_id']; ?></td>
 			<td><?php echo $user['created']; ?></td>

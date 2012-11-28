@@ -215,7 +215,7 @@ class UsersController extends AppController {
 				
 				if ($this->Auth->login()) {
 					$id = $this->Auth->user('id');
-					$username = $this->Auth->user('username');
+					$username = $this->Auth->user('name');
 					
 					$this->Session->setFlash('Welcome '.$username , 'success');
 					$this->redirect(array('action' => 'view', $id));

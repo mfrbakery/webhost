@@ -60,7 +60,7 @@ class User extends AppModel {
 	
 	
 	public $validate = array(
-		'username' => array(
+		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				'message' => 'A username is required.',
