@@ -22,7 +22,7 @@
     }
 
 	/* Special class on .container surrounding .navbar, used for positioning it into place. */
-    .navbar-fixed-top {
+   .navbar-fixed-top {
       position: relative;
       z-index: 10;
       margin-top: -90px;
@@ -194,13 +194,18 @@
 		  }
 
       
-      .navbar-fixed-top,
-  .navbar-fixed-bottom {
-    margin-right: -20px;
-    margin-left: -20px;
-  }
-
-
+	      .navbar-fixed-top,
+	  .navbar-fixed-bottom {
+	    margin-right: -20px;
+	    margin-left: -20px;
+	  }
+	
+.navbar-fixed-top {
+      position: relative;
+      z-index: 10;
+      margin-top: 0px;
+      margin-bottom: 0px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
       .carousel {
         margin-left: -20px;
         margin-right: -20px;
