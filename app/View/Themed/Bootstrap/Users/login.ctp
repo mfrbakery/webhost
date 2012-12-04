@@ -32,7 +32,7 @@ echo $this->Session->flash('auth'); ?>
 	<div class="formactions">
 	 <?php
        echo $this->Form->create('User', array('url' => array('controller' => 'users', 'action' => 'login')));
-		echo $this->Form->input('User.name');
+		echo $this->Form->input('User.username');
 		echo $this->Form->input('User.password');
 		echo $this->Form->end('Login');
 		?>
