@@ -1,6 +1,7 @@
 <?php 
 	
-	$current_page = $this->params['action'];
+		$current_page = $this->params['action'];
+		$current_controller = $this->params['controller'];
 
 ?>
 
@@ -21,8 +22,8 @@
 					<li <?php if($current_page=="base_css"){echo'class="active"';} ?>>
 						<?php echo $this->Html->link('Base CSS', array('controller' => 'app', 'action' => 'base_css')); ?>
 					</li>
-					<li <?php if($current_page=="components"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Components', array('controller' => 'app', 'action' => 'components')); ?>
+					<li <?php if($current_controller=="contact"){echo'class="active"';} ?>>
+						<?php echo $this->Html->link('Contact', array('controller' => 'contact', 'action' => 'index')); ?>
 					</li>
 					<li <?php if($current_page=="javascript"){echo'class="active"';} ?>>
 						<?php echo $this->Html->link('Javascript plugins', array('controller' => 'app', 'action' => 'javascript')); ?>
